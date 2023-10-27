@@ -1,26 +1,40 @@
 import { createSlice } from '@reduxjs/toolkit'
-// import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../index'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { TBlockProperties } from '../../constants/blockParams'
 
-interface BlocksState {
+// TODO: добавить линтер
+// TODO: сделать базовый дизайн в фигме
+// TODO: сделать простую схему в миро
+// TODO: сделать нормальное формирование id
+
+interface IBlocksState {
   count: number
+  ids: number[]
 }
 
-// Define the initial state using that type
-const initialState: BlocksState = {
+const initialState: IBlocksState = {
   count: 0,
+  ids: []
 }
 
 export const blocksSlice = createSlice({
   name: 'blocks',
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
-  reducers: {},
+  reducers: {
+    createBlock: (state) => {
+      const newBlockId = state.ids.length === 0 
+        ? 1
+        : state.ids[state.ids.length - 1] + 1
+      state.count += 1
+      state.ids.push(newBlockId)
+    },
+    removeBlock: (state, action: PayloadAction<TBlockProperties>) => {
+      state.count -= action.payload.amount
+      state.ids.filter(id => id !== action.payload.id)
+    }
+  },
 })
 
-// export const { increment, decrement, incrementByAmount } = blocksSlice.actions
-
-// Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
+export const { createBlock, removeBlock } = blocksSlice.actions
 
 export default blocksSlice.reducer
