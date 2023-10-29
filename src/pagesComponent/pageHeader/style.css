@@ -1,0 +1,10 @@
+.header-wrapper {
+  /* TODO: Добавить основные константы стилей */
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  min-height: 35px;
+  width: calc(100vw - 20px);
+  background-color: red;
+}

@@ -1,18 +1,20 @@
-import './App.css'
-import SimpleWrapper from './components/ui/wrapper/simpleWrapper'
-import ImageLoader from './components/functional/imageLoader'
+import './style.css'
+import SimpleWrapper from '../../components/ui/wrapper/simpleWrapper'
+import ImageLoader from '../../components/functional/imageLoader'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
-import { useAppSelector } from './store/hooks'
-import { getBlocksIds } from './store/blocks/selectors'
-import BlockCreationButton from './components/functional/blockCreationButton'
+import { useAppSelector } from '../../store/hooks'
+import { getBlocksIds } from '../../store/blocks/selectors'
+import BlockCreationButton from '../../components/functional/blockCreationButton'
+import PageHeader from '../../pagesComponent/pageHeader'
 
 // TODO: вынести блоки в отдельный контейнер
 
-function App() {
+const MainPage = () => {
   const blocksIds = useAppSelector(getBlocksIds);
 
   return (
     <>
+      <PageHeader />
       <BlockCreationButton />
       <DragDropContext onDragEnd={() => console.log('test')}>
         <Droppable droppableId='root' type='group'>
@@ -29,7 +31,7 @@ function App() {
                       <SimpleWrapper
                       isCentered
                     >
-                    <ImageLoader>Image loader {id}</ImageLoader>
+                      <ImageLoader>Image loader {id}</ImageLoader>
                     </SimpleWrapper>
                     </div>
                   )}
@@ -43,4 +45,4 @@ function App() {
   )
 }
 
-export default App
+export default MainPage;
