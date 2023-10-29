@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cn from 'classnames'
-import './style.css'
+import './style.scss'
 import HeaderLeftMenu from './components/leftMenu'
 
 type THeaderProps = {
