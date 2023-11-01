@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
+import layoutReducer from './layout'
 import blocksReducer from './blocks'
 
 export const store = configureStore({
   reducer: {
-    blocks: blocksReducer
+    layout: layoutReducer,
+    blocks: blocksReducer,
   },
 })
 
