@@ -1,6 +1,6 @@
 import './style.css'
 
-import PageHeader from '@pagesComponent/pageHeader'
+import PageHeader from '@pagesComponent/pageHeader';
 import BuilderPageContent from '@pagesComponent/builderPageContent';
 
 const BuilderPage = () => {

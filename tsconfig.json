@@ -23,6 +23,7 @@
       "@components/*": ["./src/components/*"],
       "@store/*": ["./src/store/*"],
       "@constants/*": ["./src/constants/*"],
+      "@pagesComponent/*": ["./src/pagesComponent/*"],
     }
   },
   "include": ["src"],
