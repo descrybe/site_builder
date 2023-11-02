@@ -31,10 +31,14 @@ export const blocksSlice = createSlice({
     removeBlock: (state, action: PayloadAction<TBlockProperties>) => {
       state.count -= action.payload.amount
       state.ids.filter(id => id !== action.payload.id)
+    },
+    removeAllBlocks: (state) => {
+      state.count = 0
+      state.ids = []
     }
   },
 })
 
-export const { createBlock, removeBlock } = blocksSlice.actions
+export const { createBlock, removeBlock, removeAllBlocks } = blocksSlice.actions
 
 export default blocksSlice.reducer

@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import './styles.scss'
+
 import BlockCreationButton from '../blockCreationButton'
+import DeleteButton from '../deleteButton'
 
 const BuilderPanelBar: FC = () => {
   return (
@@ -9,7 +11,9 @@ const BuilderPanelBar: FC = () => {
       <li>
         <BlockCreationButton />
       </li>
-      <li></li>
+      <li>
+        <DeleteButton />
+      </li>
       <li></li>
       <li></li>
       <li></li>

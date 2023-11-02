@@ -8,9 +8,9 @@ const GRID_STEP = 50;
 // TODO: вынести функцию в helpers и изменить параметры на правильные значения сетки
 const drawCanvasLine = (ctx: CanvasRenderingContext2D, index: number, isVertical = false): void => {
   let gridOffsetX = 0,
-  gridOffsetY = GRID_STEP * index,    
-  lineOffsetX = window.innerHeight,
-  lineOffsetY = GRID_STEP * index
+    gridOffsetY = GRID_STEP * index,
+    lineOffsetX = window.innerHeight,
+    lineOffsetY = GRID_STEP * index
 
   if (isVertical) {
     gridOffsetX = GRID_STEP * index
@@ -18,7 +18,7 @@ const drawCanvasLine = (ctx: CanvasRenderingContext2D, index: number, isVertical
     lineOffsetX = GRID_STEP * index
     lineOffsetY = window.innerWidth
   }
-  
+
   ctx.beginPath();
   ctx.moveTo(gridOffsetX, gridOffsetY);
   ctx.lineTo(lineOffsetX, lineOffsetY);
@@ -33,7 +33,7 @@ const BuilderGrid = () => {
 
   useEffect(() => {
     if (canvasRef.current) {
-      const ctx = canvasRef.current.getContext('2d'); 
+      const ctx = canvasRef.current.getContext('2d');
       canvasRef.current.width = window.innerWidth;
       canvasRef.current.height = window.innerHeight;
 
