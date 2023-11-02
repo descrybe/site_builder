@@ -12,6 +12,7 @@ export default defineConfig({
       '@constants': `${path.resolve(__dirname, "./src/constants/")}`,
       '@pages': `${path.resolve(__dirname, "./src/pages/")}`,
       '@helpers': `${path.resolve(__dirname, "./src/helpers/")}`,
+      '@pagesComponent': `${path.resolve(__dirname, "./src/pagesComponent/")}`,
     }
   }
 })

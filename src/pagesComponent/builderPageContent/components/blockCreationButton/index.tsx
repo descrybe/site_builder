@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
-import { useAppDispatch } from "../../../../store/hooks";
-import { createBlock } from "../../../../store/blocks";
+import { useAppDispatch } from "@store/hooks";
+import { createBlock } from "@store/blocks";
 import './style.scss'
 
 const BlockCreationButton: FC<{ content?: string | ReactNode }> = ({content}) => {

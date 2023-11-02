@@ -1,11 +1,13 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import './style.scss'
+
+import { useAppSelector } from '@store/hooks'
+import { getIsHeaderVisible } from '@store/layout/selectors'
+
+import ExpandButton from '@components/ui/functionalUiComponents/expandButton'
 import HeaderLeftMenu from './components/leftMenu'
 import HeaderRightMenu from './components/rightMenu'
-import { useAppSelector } from '../../store/hooks'
-import { getIsHeaderVisible } from '../../store/layout/selectors'
-import ExpandButton from '../../components/ui/functionalUiComponents/expandButton'
 
 type THeaderProps = {
   isPossibleToHide?: boolean

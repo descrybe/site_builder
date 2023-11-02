@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { FC } from 'react';
 import './style.scss';
-import { setIsHeaderVisible } from '../../../../store/layout';
+import { setIsHeaderVisible } from '@store/layout';
 
 type TRightHeaderProps = {
   isShowCollapseButton?: boolean
