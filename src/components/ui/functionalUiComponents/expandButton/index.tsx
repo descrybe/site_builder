@@ -3,7 +3,7 @@ import './style.scss';
 
 
 // TODO: добавить алиасы
-import { setIsHeaderVisible } from '../../../../store/layout';
+import { setIsHeaderVisible } from '@store/layout';
 
 const ExpandButton = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const ExpandButton = () => {
 
   return (
     <div className='expand-button-wrapper'>
-      <button className='expand-button' onClick={expandButtonHandler}>s</button>
+      <button className='expand-button' onClick={expandButtonHandler}>H</button>
     </div>
   )
 };
