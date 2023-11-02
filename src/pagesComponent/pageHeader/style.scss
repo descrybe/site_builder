@@ -1,0 +1,9 @@
+.header-wrapper {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  min-height: 35px;
+  width: calc(100vw - 20px);
+  background-color: rgb(10, 180, 226);
+}

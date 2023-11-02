@@ -1,0 +1,14 @@
+.header-left-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-weight: 700;
+}
+
+.header-left-menu li {
+  margin-right: 10px;
+}
+
+.header-left-menu a {
+  color: black;
+}

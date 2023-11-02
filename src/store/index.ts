@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import layoutReducer from './layout'
 import blocksReducer from './blocks'
 
 export const store = configureStore({
-	reducer: {
-		blocks: blocksReducer
-	},
+  reducer: {
+    layout: layoutReducer,
+    blocks: blocksReducer,
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>

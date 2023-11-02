@@ -1,19 +1,17 @@
-import './App.css'
-import SimpleWrapper from './components/ui/wrapper/simpleWrapper'
-import ImageLoader from './components/functional/imageLoader'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
-import { useAppSelector } from './store/hooks'
-import { getBlocksIds } from './store/blocks/selectors'
-import BlockCreationButton from './components/functional/blockCreationButton'
 
-// TODO: вынести блоки в отдельный контейнер
+import { useAppSelector } from '@store/hooks'
+import { getBlocksIds } from '@store/blocks/selectors'
 
-function App() {
+import SimpleWrapper from '@components/ui/wrapper/simpleWrapper'
+import ImageLoader from '@components/functional/imageLoader'
+import BuilderPanelBar from './components/builderPanelBar'
+
+const BuilderPageContent = () => {
   const blocksIds = useAppSelector(getBlocksIds);
 
   return (
     <>
-      <BlockCreationButton />
       <DragDropContext onDragEnd={() => console.log('test')}>
         <Droppable droppableId='root' type='group'>
           {(provided) => (
@@ -23,14 +21,14 @@ function App() {
                   {(provided) => (
                     <div
                       {...provided.dragHandleProps}
-                      {...provided.draggableProps} 
+                      {...provided.draggableProps}
                       ref={provided.innerRef}
                     >
                       <SimpleWrapper
-                      isCentered
-                    >
-                    <ImageLoader>Image loader {id}</ImageLoader>
-                    </SimpleWrapper>
+                        isCentered
+                      >
+                        <ImageLoader>Image loader {id}</ImageLoader>
+                      </SimpleWrapper>
                     </div>
                   )}
                 </Draggable>
@@ -38,9 +36,10 @@ function App() {
             </div>
           )}
         </Droppable>
+        <BuilderPanelBar />
       </DragDropContext>
     </>
   )
 }
 
-export default App
+export default BuilderPageContent;
