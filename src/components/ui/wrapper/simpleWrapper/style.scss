@@ -1,3 +1,5 @@
+@import '@constants/style_constants';
+
 .wrapper-container {
   position: relative;
   width: 300px;
@@ -13,7 +15,13 @@
   display: flex;
 }
 
-.centered {
+.centeredBlock {
   justify-content: center;
   align-items: center;
+}
+
+.activeBlock {
+  border: 1px solid rgb(27, 18, 0);
+  box-shadow: 0px 0px 12px 1px rgba(174, 81, 9, 0.5);
+  z-index: $active-block-z-index;
 }

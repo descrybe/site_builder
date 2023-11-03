@@ -18,8 +18,10 @@ const SimpleWrapper: FC<SimpleWrapperProps> = ({ children, isCentered, id }) => 
   const dispatch = useDispatch();
   const activeId = useAppSelector(getActiveBlockId);
   const isBlockActive = id === activeId;
+
   const dragEndHandler = (event: DragEvent<HTMLDivElement>): void => {
     console.log(event)
+    dispatch(setActiveId(id))
   }
 
   const blockClickHandler = (): void => {
@@ -28,13 +30,16 @@ const SimpleWrapper: FC<SimpleWrapperProps> = ({ children, isCentered, id }) => 
 
   return (
     <div
-      className='wrapper-container'
+      className={cn({
+        'wrapper-container': true,
+        activeBlock: isBlockActive,
+      })}
       onDragEnd={e => dragEndHandler(e)}
       onClick={blockClickHandler}
     >
       <div className={cn({
           'wrapper-content': true,
-          centered: isCentered,
+          centeredBlock: isCentered,
         })}
       >
         {children}

@@ -13,7 +13,6 @@ type THeaderProps = {
   isPossibleToHide?: boolean
 }
 
-// TODO: пофиксить ширину, когда появляется скроллбар
 // TODO: перенести из pagesComponent в components/ui/layout
 
 const PageHeader: FC<THeaderProps> = ({ isPossibleToHide }) => {

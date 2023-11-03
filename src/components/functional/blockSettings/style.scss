@@ -1,3 +1,5 @@
+@import '@constants/style_constants';
+
 .block-settings-wrapper {
   position: absolute;
   top: -10px;
@@ -5,7 +7,7 @@
   height: 40px;
   border: 1px solid black;
   background-color: red;
-  z-index: 4;
+  z-index: $block-menu-z-index;
   list-style: none;
   display: flex;
 
