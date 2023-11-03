@@ -1,4 +1,4 @@
-import { DEFAULT_GRID_STEP, DEFAULT_GRID_COLOR } from '@helpers/drawCanvas'
+import { EGridStep, EGridColor } from '@helpers/drawCanvas'
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
@@ -8,8 +8,8 @@ export interface IGridState {
 }
 
 const initialState: IGridState = {
-  color: DEFAULT_GRID_COLOR,
-  step: DEFAULT_GRID_STEP,
+  color: EGridColor.GREY,
+  step: EGridStep.SMALL,
 }
 
 export const gridSlice = createSlice({

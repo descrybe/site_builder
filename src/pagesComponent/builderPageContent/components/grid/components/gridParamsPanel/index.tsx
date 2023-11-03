@@ -1,23 +1,37 @@
-// import { changeGridStep } from "@store/grid"
-// import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import '../../style.scss'
 
-const GridParamsPanel = () => {
-  // const dispatch = useDispatch()
+import { changeGridStep, changeGridColor } from "@store/grid"
+import { EGridColor, EGridStep } from "@helpers/drawCanvas"
 
-  const changeSizeHandler = (): void => {
-    // dispatch(changeGridStep())
+const GridParamsPanel = () => {
+  const dispatch = useDispatch()
+
+  const changeSizeHandler = (size: EGridStep): void => {
+    dispatch(changeGridStep(size))
   }
 
-  const changeColorHandler = (): void => {
-
+  const changeColorHandler = (color: EGridColor): void => {
+    dispatch(changeGridColor(color))
   }
 
   return (
     <div className='grid-params-panel'>
-      <button onClick={changeSizeHandler}>Change size</button>
-      {/* Сделать выбор цвета сетки: пикер с 2-3 вариантами */}
-      <button onClick={changeColorHandler}>Choose grid color</button>
+      <h3>Grid</h3>
+      <ul className='grid-params-panel__controls'>
+        <li>
+          <span>Size: &nbsp;</span>
+          <button onClick={() => changeSizeHandler(EGridStep.SMALL)}>s</button>
+          <button onClick={() => changeSizeHandler(EGridStep.MEDIUM)}>m</button>
+          <button onClick={() => changeSizeHandler(EGridStep.BIG)}>b</button>
+        </li>
+        <li>
+          <span>Color: &nbsp;</span>
+          <button onClick={() => changeColorHandler(EGridColor.GREY)}>grey</button>
+          <button onClick={() => changeColorHandler(EGridColor.BLACK)}>black</button>
+          <button onClick={() => changeColorHandler(EGridColor.RED)}>red</button>
+        </li>
+      </ul>
     </div>
   )
 }

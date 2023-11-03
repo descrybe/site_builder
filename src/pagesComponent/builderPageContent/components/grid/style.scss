@@ -15,11 +15,20 @@
   position: fixed;
   top: 100px;
   right: 20px;
+  padding: 7px;
   display: flex;
+  background-color: white;
   flex-direction: column;
+  border: 1px solid black;
   z-index: 2;
 
+  &__controls {
+    list-style: none;
+  }
+
   button {
-    background-color: red;
+    min-width: 30px;
+    background-color: $default-color;
+    margin-right: 5px;
   }
 }

@@ -3,6 +3,8 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import { useAppSelector } from '@store/hooks'
 import { getBlocksIds } from '@store/blocks/selectors'
 
+import './style.scss'
+
 import SimpleWrapper from '@components/ui/wrapper/simpleWrapper'
 import ImageLoader from '@components/functional/imageLoader'
 import BuilderPanelBar from './components/builderPanelBar'
