@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux';
 import './style.scss';
 
-
-// TODO: добавить алиасы
 import { setIsHeaderVisible } from '@store/layout';
 
 const ExpandButton = () => {

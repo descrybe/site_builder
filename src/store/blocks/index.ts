@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { TBlockProperties } from '../../constants/blockParams'
 
 // TODO: добавить линтер
 // TODO: сделать базовый дизайн в фигме
@@ -10,11 +9,13 @@ import { TBlockProperties } from '../../constants/blockParams'
 interface IBlocksState {
   count: number
   ids: number[]
+  activeId: number
 }
 
 const initialState: IBlocksState = {
   count: 0,
-  ids: []
+  ids: [],
+  activeId: 0
 }
 
 export const blocksSlice = createSlice({
@@ -22,23 +23,27 @@ export const blocksSlice = createSlice({
   initialState,
   reducers: {
     createBlock: (state) => {
-      const newBlockId = state.ids.length === 0 
+      const newBlockId = state.ids.length === 0
         ? 1
         : state.ids[state.ids.length - 1] + 1
       state.count += 1
       state.ids.push(newBlockId)
+      state.activeId = 0
     },
-    removeBlock: (state, action: PayloadAction<TBlockProperties>) => {
-      state.count -= action.payload.amount
-      state.ids.filter(id => id !== action.payload.id)
+    removeBlockById: (state, action: PayloadAction<number>) => {
+      state.count -= state.count
+      state.ids = state.ids.filter(id => id !== action.payload)
     },
     removeAllBlocks: (state) => {
       state.count = 0
       state.ids = []
+    },
+    setActiveId: (state, action: PayloadAction<number>) => {
+      state.activeId = action.payload
     }
   },
 })
 
-export const { createBlock, removeBlock, removeAllBlocks } = blocksSlice.actions
+export const { createBlock, removeBlockById, removeAllBlocks, setActiveId } = blocksSlice.actions
 
 export default blocksSlice.reducer

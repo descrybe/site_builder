@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cn from 'classnames'
-import './styles.scss'
+import './style.scss'
 
 import BlockCreationButton from '../blockCreationButton'
 import DeleteButton from '../deleteButton'

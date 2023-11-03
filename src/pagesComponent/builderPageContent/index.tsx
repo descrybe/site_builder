@@ -16,7 +16,7 @@ const BuilderPageContent = () => {
 
   return (
     <div className='builder-page-content'>
-      <BuilderGrid />      
+      <BuilderGrid />
       <GridParamsPanel />
       <DragDropContext onDragEnd={() => console.log('test')}>
         <Droppable droppableId='root' type='group'>
@@ -30,9 +30,7 @@ const BuilderPageContent = () => {
                       {...provided.draggableProps}
                       ref={provided.innerRef}
                     >
-                      <SimpleWrapper
-                        isCentered
-                      >
+                      <SimpleWrapper id={id} isCentered>
                         <ImageLoader>Image loader {id}</ImageLoader>
                       </SimpleWrapper>
                     </div>
