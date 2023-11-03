@@ -24,6 +24,7 @@
       "@store/*": ["./src/store/*"],
       "@constants/*": ["./src/constants/*"],
       "@pagesComponent/*": ["./src/pagesComponent/*"],
+      "@helpers/*": ["./src/helpers/*"],
     }
   },
   "include": ["src"],

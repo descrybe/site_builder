@@ -2,31 +2,9 @@
 // @ts-nocheck
 import { useRef, useEffect } from "react";
 import './style.scss';
+import { drawCanvasLine } from "@helpers/drawCanvas";
 
-const GRID_STEP = 50;
-
-// TODO: вынести функцию в helpers и изменить параметры на правильные значения сетки
-const drawCanvasLine = (ctx: CanvasRenderingContext2D, index: number, isVertical = false): void => {
-  let gridOffsetX = 0,
-    gridOffsetY = GRID_STEP * index,
-    lineOffsetX = window.innerHeight,
-    lineOffsetY = GRID_STEP * index
-
-  if (isVertical) {
-    gridOffsetX = GRID_STEP * index
-    gridOffsetY = 0
-    lineOffsetX = GRID_STEP * index
-    lineOffsetY = window.innerWidth
-  }
-
-  ctx.beginPath();
-  ctx.moveTo(gridOffsetX, gridOffsetY);
-  ctx.lineTo(lineOffsetX, lineOffsetY);
-  ctx.closePath();
-  ctx.lineWidth = 1;
-  ctx.strokeStyle = 'black';
-  ctx.stroke();
-}
+// TODO: изменить параметры на правильные значения сетки
 
 const BuilderGrid = () => {
   const canvasRef = useRef(null)
