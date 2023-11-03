@@ -1,7 +1,10 @@
 .wrapper-container {
-  border: 1px solid black;
+  position: relative;
   width: 300px;
   height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  z-index: 2;
 }
 
 .wrapper-content {

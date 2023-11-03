@@ -3,15 +3,21 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import { useAppSelector } from '@store/hooks'
 import { getBlocksIds } from '@store/blocks/selectors'
 
+import './style.scss'
+
 import SimpleWrapper from '@components/ui/wrapper/simpleWrapper'
 import ImageLoader from '@components/functional/imageLoader'
 import BuilderPanelBar from './components/builderPanelBar'
+import BuilderGrid from './components/grid'
+import GridParamsPanel from './components/grid/components/gridParamsPanel'
 
 const BuilderPageContent = () => {
   const blocksIds = useAppSelector(getBlocksIds);
 
   return (
-    <>
+    <div className='builder-page-content'>
+      <BuilderGrid />      
+      <GridParamsPanel />
       <DragDropContext onDragEnd={() => console.log('test')}>
         <Droppable droppableId='root' type='group'>
           {(provided) => (
@@ -38,7 +44,7 @@ const BuilderPageContent = () => {
         </Droppable>
         <BuilderPanelBar />
       </DragDropContext>
-    </>
+    </div>
   )
 }
 

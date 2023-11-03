@@ -1,0 +1,34 @@
+@import '@constants/style_constants';
+
+.grid-canvas-wrapper {
+  height: 100vh;
+  width: 100vw;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $base-z-index;
+}
+
+.grid-params-panel {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  padding: 7px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  border: 1px solid black;
+  z-index: 2;
+
+  &__controls {
+    list-style: none;
+  }
+
+  button {
+    min-width: 30px;
+    background-color: $default-color;
+    margin-right: 5px;
+  }
+}

@@ -1,3 +1,5 @@
+@import '@constants/style_constants';
+
 .expand-button {
   position: fixed;
   top: 5px;
@@ -6,7 +8,8 @@
   height: 50px;
   border: 2px solid black;
   border-radius: 50%;
-  background-color: rgb(10, 180, 226);
+  background-color: $default-color;
+  z-index: 3;
 
   &-wrapper {
 
