@@ -1,11 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-// TODO: добавить линтер
-// TODO: сделать базовый дизайн в фигме
-// TODO: сделать простую схему в миро
-// TODO: сделать нормальное формирование id
-
 interface ILayoutState {
   isHeaderVisible: boolean
 }

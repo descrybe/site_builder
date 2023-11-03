@@ -6,14 +6,16 @@ import { getBlocksIds } from '@store/blocks/selectors'
 import SimpleWrapper from '@components/ui/wrapper/simpleWrapper'
 import ImageLoader from '@components/functional/imageLoader'
 import BuilderPanelBar from './components/builderPanelBar'
-// import BuilderGrid from './components/grid'
+import BuilderGrid from './components/grid'
+import GridParamsPanel from './components/grid/components/gridParamsPanel'
 
 const BuilderPageContent = () => {
   const blocksIds = useAppSelector(getBlocksIds);
 
   return (
     <div className='builder-page-content'>
-      {/* <BuilderGrid /> */}
+      <BuilderGrid />      
+      <GridParamsPanel />
       <DragDropContext onDragEnd={() => console.log('test')}>
         <Droppable droppableId='root' type='group'>
           {(provided) => (

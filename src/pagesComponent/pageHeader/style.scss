@@ -7,8 +7,9 @@
   display: flex;
   align-self: center;
   justify-content: space-between;
-  min-height: 35px;
-  width: calc(100vw - 20px);
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
   background-color: $header-color;
   z-index: 3;
 }
