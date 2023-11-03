@@ -1,7 +1,3 @@
-export const DEFAULT_GRID_STEP = 20;
-export const DEFAULT_GRID_LINES_COUNT = 100
-export const DEFAULT_GRID_COLOR = 'grey'
-
 type TDrawCanvasLineType = {
   ctx: CanvasRenderingContext2D
   index: number
@@ -11,14 +7,25 @@ type TDrawCanvasLineType = {
   gridStep?: number
 }
 
+export enum EGridColor {
+  GREY = 'grey', // DEFAULT
+  BLACK = 'black',
+  RED = 'red'
+}
+
+export enum EGridStep {
+  SMALL = 20, // DEFAULT
+  MEDIUM = 35,
+  BIG = 50,
+}
+
 export const drawCanvasLine = ({
   ctx,
   index,
   isVertical = false,
-  gridColor = DEFAULT_GRID_COLOR,
-  gridStep = DEFAULT_GRID_STEP
+  gridColor = EGridColor.GREY,
+  gridStep = EGridStep.SMALL
 }: TDrawCanvasLineType): void => {
-  // TODO: исправить значения на вычисленные для текущего значения монитора
   let gridOffsetX = 0,
     gridOffsetY = gridStep * index,
     lineOffsetX = window.innerWidth,
@@ -28,7 +35,7 @@ export const drawCanvasLine = ({
     gridOffsetX = gridStep * index
     gridOffsetY = 0
     lineOffsetX = gridStep * index
-    lineOffsetY = window.innerWidth
+    lineOffsetY = window.innerHeight
   }
 
   ctx.beginPath();
