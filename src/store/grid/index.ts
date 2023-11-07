@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface IGridState {
-  color: string
+  color: EGridColor
   step: number
 }
 
@@ -19,7 +19,7 @@ export const gridSlice = createSlice({
     changeGridStep: (state, action: PayloadAction<number>) => {
       state.step = action.payload
     },
-    changeGridColor: (state, action: PayloadAction<string>) => {
+    changeGridColor: (state, action: PayloadAction<EGridColor>) => {
       state.color = action.payload
     }
   },

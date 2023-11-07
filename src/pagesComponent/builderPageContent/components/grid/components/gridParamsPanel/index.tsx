@@ -1,11 +1,16 @@
-import { useDispatch } from "react-redux"
-import '../../style.scss'
+import { useDispatch } from 'react-redux';
+import cn from 'classnames';
+import '../../style.scss';
 
-import { changeGridStep, changeGridColor } from "@store/grid"
-import { EGridColor, EGridStep } from "@helpers/drawCanvas"
+import { changeGridStep, changeGridColor } from '@store/grid';
+import { EGridColor, EGridStep } from '@helpers/drawCanvas';
+import { useAppSelector } from '@store/hooks';
+import { getIsGridVisible } from '@store/builder/selectors';
+import { changeGridVisibility } from '@store/builder';
 
 const GridParamsPanel = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const isGridVisible = useAppSelector(getIsGridVisible)
 
   const changeSizeHandler = (size: EGridStep): void => {
     dispatch(changeGridStep(size))
@@ -15,9 +20,19 @@ const GridParamsPanel = () => {
     dispatch(changeGridColor(color))
   }
 
+  const changeGridVisibilityHandler = (): void => {
+    dispatch(changeGridVisibility(!isGridVisible))
+  }
+
   return (
     <div className='grid-params-panel'>
-      <h3>Grid</h3>
+      <div className='grid-params-panel__main-props'>
+        <h3>Grid</h3>
+        <div className={cn({
+          'grid-checkbox': true,
+          'grid-checkbox--active': isGridVisible
+        })} onClick={changeGridVisibilityHandler}></div>
+      </div>
       <ul className='grid-params-panel__controls'>
         <li>
           <span>Size: &nbsp;</span>

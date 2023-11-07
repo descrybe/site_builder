@@ -1,0 +1,26 @@
+@import '@constants/style_constants';
+
+.side-panel {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  width: 200px;
+  height: calc(100vh - 50px);
+  background-color: red;
+  z-index: $ui-z-index;
+
+  &--full-height {
+    top: 0;
+    height: 100vh;
+  }
+
+  &__drag-line {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    left: 200px;
+    width: 3px;
+    background-color: black;
+    cursor: col-resize;
+  }
+}

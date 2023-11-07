@@ -10,7 +10,8 @@ type TDrawCanvasLineType = {
 export enum EGridColor {
   GREY = 'grey', // DEFAULT
   BLACK = 'black',
-  RED = 'red'
+  RED = 'red',
+  WHITE = 'white'
 }
 
 export enum EGridStep {

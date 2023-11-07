@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import layoutReducer from './layout'
-import blocksReducer from './blocks'
+import blocksReducer from './blocks';
+import builderReducer from './builder';
 import gridReducer from './grid';
+import layoutReducer from './layout';
 
 export const store = configureStore({
   reducer: {
     blocks: blocksReducer,
+    builder: builderReducer,
     grid: gridReducer,
     layout: layoutReducer,
   },

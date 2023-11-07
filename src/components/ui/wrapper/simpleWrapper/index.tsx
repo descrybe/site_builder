@@ -1,6 +1,6 @@
 import { DragEvent, FC, ReactNode } from 'react'
 import cn from 'classnames'
-import './style.css'
+import './style.scss'
 
 import BlockSettings from '@components/functional/blockSettings'
 import { useAppSelector } from '@store/hooks'
