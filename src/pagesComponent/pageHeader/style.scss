@@ -11,5 +11,5 @@
   height: 50px;
   width: 100%;
   background-color: $default-color;
-  z-index: 3;
+  z-index: $header-z-index;
 }

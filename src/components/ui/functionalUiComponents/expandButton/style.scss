@@ -9,7 +9,7 @@
   border: 2px solid black;
   border-radius: 50%;
   background-color: $default-color;
-  z-index: 3;
+  z-index: $header-z-index;;
 
   &-wrapper {
 
