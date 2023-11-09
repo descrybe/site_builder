@@ -5,11 +5,13 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 export interface IGridState {
   color: EGridColor
   step: number
+  alpha: number
 }
 
 const initialState: IGridState = {
   color: EGridColor.GREY,
   step: EGridStep.SMALL,
+  alpha: 1
 }
 
 export const gridSlice = createSlice({
@@ -21,10 +23,13 @@ export const gridSlice = createSlice({
     },
     changeGridColor: (state, action: PayloadAction<EGridColor>) => {
       state.color = action.payload
+    },
+    changeGridAlpha: (state, action: PayloadAction<number>) => {
+      state.alpha = action.payload
     }
   },
 })
 
-export const { changeGridStep, changeGridColor } = gridSlice.actions
+export const { changeGridStep, changeGridColor, changeGridAlpha } = gridSlice.actions
 
 export default gridSlice.reducer
