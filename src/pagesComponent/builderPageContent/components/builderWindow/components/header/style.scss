@@ -1,0 +1,29 @@
+.builder-window-header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: end;
+  border-bottom: 2px solid black;
+  background-color: rgb(230, 230, 230);
+  z-index: 3;
+
+  &__tab {
+    &:first-of-type {
+      margin-left: 10px;
+    }
+
+    position: relative;
+    bottom: 0;
+    padding: 8px 12px;
+    margin-right: 5px;
+    max-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(100, 100, 100);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}

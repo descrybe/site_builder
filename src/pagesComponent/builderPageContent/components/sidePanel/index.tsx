@@ -6,8 +6,8 @@ import { useAppSelector } from '@store/hooks';
 import { getIsHeaderVisible } from '@store/layout/selectors';
 
 const SidePanel = () => {
-  const [initialPos, setInitialPos] = React.useState(0);
-  const [initialSize, setInitialSize] = React.useState(0);
+  const [initialPos, setInitialPos] = React.useState(200);
+  const [initialSize, setInitialSize] = React.useState(200);
   const draggableRef = useRef(null);
   const sideBarRef = useRef(null);
   const isHeaderVisible = useAppSelector(getIsHeaderVisible);
@@ -41,21 +41,26 @@ const SidePanel = () => {
       'side-panel': true,
       'side-panel--full-height': !isHeaderVisible
     })}>
-      <div className=''>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-        </ul>
-      </div>
-      <div className=''>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-        </ul>
+      <header>
+        <div>Header</div>
+      </header>
+      <div className='side-panel__components-list-wrapper'>
+        <div className=''>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+          </ul>
+        </div>
+        <div className=''>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+          </ul>
+        </div>
       </div>
       <div
         className='side-panel__drag-line'

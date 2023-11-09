@@ -1,12 +1,10 @@
 @import '@constants/style_constants';
 
 .side-panel {
-  position: fixed;
-  left: 0;
-  top: 50px;
-  width: 200px;
+  position: relative;
+  min-width: 200px;
   height: calc(100vh - 50px);
-  background-color: red;
+  background-color: white;
   z-index: $ui-z-index;
 
   &--full-height {
@@ -22,5 +20,17 @@
     width: 3px;
     background-color: black;
     cursor: col-resize;
+  }
+
+  &__components-list-wrapper {
+    padding: 15px 10px 0 12px;
+  }
+
+  header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(176, 175, 175);
   }
 }
