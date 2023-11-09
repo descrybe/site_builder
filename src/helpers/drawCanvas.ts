@@ -5,6 +5,7 @@ type TDrawCanvasLineType = {
   gridColor?: string
   gridOffset?: [number, number]
   gridStep?: number
+  alpha?: number
 }
 
 export enum EGridColor {
@@ -23,6 +24,7 @@ export enum EGridStep {
 export const drawCanvasLine = ({
   ctx,
   index,
+  alpha = 0.5,
   isVertical = false,
   gridColor = EGridColor.GREY,
   gridStep = EGridStep.SMALL
@@ -43,6 +45,7 @@ export const drawCanvasLine = ({
   ctx.moveTo(gridOffsetX, gridOffsetY);
   ctx.lineTo(lineOffsetX, lineOffsetY);
   ctx.closePath();
+  ctx.globalAlpha = alpha;
   ctx.lineWidth = 1;
   ctx.strokeStyle = gridColor;
   ctx.stroke();
